@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>O G P R O D E I N | Secretaria</title>
-                
+
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
         <link href="<?php echo URL; ?>public/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -11,9 +11,9 @@
         <link href="<?php echo URL; ?>public/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <!-- Theme style -->
         <link href="<?php echo URL; ?>public/css/AdminLTE.css" rel="stylesheet" type="text/css" />
-        
+
         <script src="<?php echo URL; ?>public/js/jquery-1.11.0.min.js"></script>
-        
+
     </head>
     <body class="skin-blue">
         <!-- header logo: style can be found in header.less -->
@@ -39,81 +39,18 @@
                                 <i class="fa fa-envelope"></i>
                                 <span class="label label-success">4</span>
                             </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">Tienes 4 mensajes</li>
-                                <li>
-                                    <!-- inner menu: contains the actual data -->
-                                    <ul class="menu">
-                                        <li><!-- start message -->
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="../../img/avatar3.png" class="img-circle" alt="User Image"/>
-                                                </div>
-                                                <h4>
-                                                    Support Team
-                                                    <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li><!-- end message -->
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="../../img/avatar2.png" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    AdminLTE Design Team
-                                                    <small><i class="fa fa-clock-o"></i> 2 hours</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="../../img/avatar.png" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    Developers
-                                                    <small><i class="fa fa-clock-o"></i> Today</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="../../img/avatar2.png" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    Sales Department
-                                                    <small><i class="fa fa-clock-o"></i> Yesterday</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="../../img/avatar.png" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    Reviewers
-                                                    <small><i class="fa fa-clock-o"></i> 2 days</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="footer"><a href="#">Ver todos los mensajes</a></li>
-                            </ul>
                         </li>
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user"></i>
-                                <span>Secretaria <i class="caret"></i></span>
+                                <span>
+                                    <div class="form-box" id="login-box" style="border: solid #ffe">
+                                        <?php echo Session::getValue('U_NAME'); ?>
+                                        <button id="closeSession">Cerrar sesión</button>
+                                    </div>
+                                    <i class="caret"></i>
+                                </span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
@@ -189,7 +126,7 @@
                                 <li><a href="listar.html"><i class="fa fa-angle-double-right"></i> Listar</a></li>
                             </ul>
                         </li>
-                        
+
                         <li>
                             <a href="mailbox.html">
                                 <i class="fa fa-envelope"></i> <span>Bandeja de Entrada</span>
@@ -216,7 +153,7 @@
 
                 <!-- Main content -->
                 <section class="content">
-                    
+
                     <!-- START ACCORDION & CAROUSEL-->
                     <div class="row">
                         <div class="col-md-6">
@@ -252,7 +189,7 @@
                                             <div id="collapseTwo" class="panel-collapse collapse">
                                                 <div class="box-body">
                                                     Primer Texto
-                                                    
+
                                                 </div>
                                             </div>
                                         </div>
@@ -332,5 +269,16 @@
         <script src="../../js/AdminLTE/app.js" type="text/javascript"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="js/AdminLTE/demo.js" type="text/javascript"></script>
+
+
+        <script>
+            $(function() {
+                $('#closeSession').click(function() {
+                    document.location = "<?php echo URL; ?>User/destroySession";
+                });
+            });
+        </script>
+
+
     </body>
 </html>

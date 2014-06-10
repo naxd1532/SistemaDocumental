@@ -14,7 +14,6 @@
                     $this ->createSession($response["per_dni"],$response["per_id"]);
                     echo 1;
                 }
-                
             }
         }
         
@@ -22,7 +21,6 @@
             Session::setValue('U_NAME', $per_dni);
             Session::setValue('ID', $per_id);
         }
-        
         
         function destroySession(){
             Session::destroy();
