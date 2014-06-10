@@ -1,3 +1,5 @@
 SistemaDocumental
 =================
-hola
+Integrantes:
+    Lara Guarniz, Diana 
+    Sandoval Arangurí, David
